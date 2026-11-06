@@ -1,0 +1,565 @@
+{
+  "run_timestamp": "2026-11-04_18-55-21",
+  "output_directory": "outputs/test_run\\run_2026-11-04_18-55-21",
+  "dataset_profile": {
+    "source_file": "data/fintech_transactions_training_dataset.csv",
+    "raw_row_count": 327,
+    "column_count": 12,
+    "columns": [
+      "transaction_id",
+      "reference_number",
+      "transaction_date",
+      "transaction_amount",
+      "currency",
+      "transaction_type",
+      "category",
+      "status",
+      "account_id",
+      "account_type",
+      "channel",
+      "customer_region"
+    ],
+    "deduplicated_row_count": 322,
+    "valid_amount_row_count": 314,
+    "currency": "INR",
+    "date_coverage": {
+      "start_date": "2025-01-06",
+      "end_date": "2025-12-31"
+    }
+  },
+  "data_quality_summary": {
+    "exact_duplicate_rows_count": 5,
+    "duplicate_transaction_ids": [
+      "TXN202500021",
+      "TXN202500076",
+      "TXN202500102",
+      "TXN202500151",
+      "TXN202500251"
+    ],
+    "missing_values_by_column": {
+      "transaction_id": 0,
+      "reference_number": 4,
+      "transaction_date": 0,
+      "transaction_amount": 4,
+      "currency": 0,
+      "transaction_type": 0,
+      "category": 5,
+      "status": 4,
+      "account_id": 5,
+      "account_type": 0,
+      "channel": 0,
+      "customer_region": 0
+    },
+    "total_missing_cells": 22,
+    "invalid_date_count": 5,
+    "invalid_amount_count": 4
+  },
+  "financial_statistics_inr": {
+    "valid_transaction_count": 314,
+    "total_amount": 3826679.43,
+    "mean_amount": 12186.88,
+    "median_amount": 4782.89,
+    "min_amount": 154.99,
+    "max_amount": 450000.0,
+    "percentiles": {
+      "p25_q1": 2023.2,
+      "p50_median": 4782.89,
+      "p75_q3": 9489.0,
+      "iqr": 7465.8
+    }
+  },
+  "outlier_analysis": {
+    "method": "1.5 * IQR Rule (Review Candidates)",
+    "lower_fence_inr": -9175.5,
+    "upper_fence_inr": 20687.7,
+    "total_outlier_candidates": 27,
+    "outlier_review_table": [
+      {
+        "transaction_id": "TXN202500322",
+        "transaction_date": "2025-07-13",
+        "amount_inr": 450000.0,
+        "category": "Merchant Purchase",
+        "status": "Completed",
+        "channel": "Web",
+        "customer_region": "North",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500321",
+        "transaction_date": "2025-06-12",
+        "amount_inr": 375000.0,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Mobile",
+        "customer_region": "Central",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500320",
+        "transaction_date": "2025-05-11",
+        "amount_inr": 300000.0,
+        "category": "Merchant Purchase",
+        "status": "Completed",
+        "channel": "Web",
+        "customer_region": "West",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500319",
+        "transaction_date": "2025-04-10",
+        "amount_inr": 225000.0,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Mobile",
+        "customer_region": "East",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500318",
+        "transaction_date": "2025-03-09",
+        "amount_inr": 175000.0,
+        "category": "Merchant Purchase",
+        "status": "Completed",
+        "channel": "Web",
+        "customer_region": "South",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500317",
+        "transaction_date": "2025-02-08",
+        "amount_inr": 125000.0,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Mobile",
+        "customer_region": "North",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500043",
+        "transaction_date": "2025-03-06",
+        "amount_inr": 29485.39,
+        "category": "Fund Transfer",
+        "status": "Reversed",
+        "channel": "Web",
+        "customer_region": "South",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500166",
+        "transaction_date": "2025-08-08",
+        "amount_inr": 29409.97,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Mobile",
+        "customer_region": "South",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500276",
+        "transaction_date": "2025-11-01",
+        "amount_inr": 29405.71,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Mobile",
+        "customer_region": "North",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500254",
+        "transaction_date": "2025-11-26",
+        "amount_inr": 29135.2,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Mobile",
+        "customer_region": "East",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500207",
+        "transaction_date": "2025-09-10",
+        "amount_inr": 28899.41,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "API",
+        "customer_region": "South",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500241",
+        "transaction_date": "2025-10-06",
+        "amount_inr": 28538.79,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Mobile",
+        "customer_region": "Central",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500190",
+        "transaction_date": "2025-09-08",
+        "amount_inr": 28196.75,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Mobile",
+        "customer_region": "East",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500068",
+        "transaction_date": "2025-04-18",
+        "amount_inr": 26973.3,
+        "category": "Missing",
+        "status": "Completed",
+        "channel": "Mobile",
+        "customer_region": "North",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500045",
+        "transaction_date": "2025-03-25",
+        "amount_inr": 26442.45,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "API",
+        "customer_region": "Central",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500128",
+        "transaction_date": "2025-06-14",
+        "amount_inr": 25914.72,
+        "category": "Missing",
+        "status": "Reversed",
+        "channel": "API",
+        "customer_region": "West",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500038",
+        "transaction_date": "2025-02-19",
+        "amount_inr": 24260.07,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "API",
+        "customer_region": "Central",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500158",
+        "transaction_date": "2025-08-14",
+        "amount_inr": 24032.89,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Web",
+        "customer_region": "West",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500275",
+        "transaction_date": "2025-11-23",
+        "amount_inr": 23832.83,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Mobile",
+        "customer_region": "North",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500063",
+        "transaction_date": "2025-04-09",
+        "amount_inr": 23568.61,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Web",
+        "customer_region": "Central",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500165",
+        "transaction_date": "2025-08-10",
+        "amount_inr": 22802.08,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Web",
+        "customer_region": "West",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500002",
+        "transaction_date": "2025-01-11",
+        "amount_inr": 22269.57,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Mobile",
+        "customer_region": "East",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500177",
+        "transaction_date": "2025-08-22",
+        "amount_inr": 21942.18,
+        "category": "Fund Transfer",
+        "status": "Pending",
+        "channel": "API",
+        "customer_region": "North",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500169",
+        "transaction_date": "2025-08-29",
+        "amount_inr": 21852.37,
+        "category": "Fund Transfer",
+        "status": "Pending",
+        "channel": "API",
+        "customer_region": "South",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500148",
+        "transaction_date": "2025-07-04",
+        "amount_inr": 20880.95,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Web",
+        "customer_region": "North",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500303",
+        "transaction_date": "2025-12-08",
+        "amount_inr": 20752.53,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Mobile",
+        "customer_region": "West",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      },
+      {
+        "transaction_id": "TXN202500027",
+        "transaction_date": "2025-02-22",
+        "amount_inr": 20717.2,
+        "category": "Fund Transfer",
+        "status": "Completed",
+        "channel": "Mobile",
+        "customer_region": "East",
+        "flag_reason": "Exceeds Upper IQR Fence (Review Candidate)"
+      }
+    ]
+  },
+  "segmented_summaries": {
+    "by_month": {
+      "2025-01": {
+        "transaction_count": 17,
+        "total_amount_inr": 108624.85,
+        "mean_amount_inr": 6389.7
+      },
+      "2025-02": {
+        "transaction_count": 21,
+        "total_amount_inr": 254647.55,
+        "mean_amount_inr": 12126.07
+      },
+      "2025-03": {
+        "transaction_count": 21,
+        "total_amount_inr": 314802.68,
+        "mean_amount_inr": 14990.6
+      },
+      "2025-04": {
+        "transaction_count": 22,
+        "total_amount_inr": 397847.18,
+        "mean_amount_inr": 18083.96
+      },
+      "2025-05": {
+        "transaction_count": 24,
+        "total_amount_inr": 403675.52,
+        "mean_amount_inr": 16819.81
+      },
+      "2025-06": {
+        "transaction_count": 24,
+        "total_amount_inr": 532951.56,
+        "mean_amount_inr": 22206.32
+      },
+      "2025-07": {
+        "transaction_count": 28,
+        "total_amount_inr": 630106.48,
+        "mean_amount_inr": 22503.8
+      },
+      "2025-08": {
+        "transaction_count": 26,
+        "total_amount_inr": 308891.42,
+        "mean_amount_inr": 11880.44
+      },
+      "2025-09": {
+        "transaction_count": 25,
+        "total_amount_inr": 159101.88,
+        "mean_amount_inr": 6364.08
+      },
+      "2025-10": {
+        "transaction_count": 34,
+        "total_amount_inr": 212087.22,
+        "mean_amount_inr": 6237.86
+      },
+      "2025-11": {
+        "transaction_count": 38,
+        "total_amount_inr": 296622.77,
+        "mean_amount_inr": 7805.86
+      },
+      "2025-12": {
+        "transaction_count": 29,
+        "total_amount_inr": 173154.99,
+        "mean_amount_inr": 5970.86
+      }
+    },
+    "by_category": {
+      "Fund Transfer": {
+        "transaction_count": 77,
+        "total_amount_inr": 1779347.3,
+        "mean_amount_inr": 23108.41,
+        "median_amount_inr": 14176.46
+      },
+      "Merchant Purchase": {
+        "transaction_count": 112,
+        "total_amount_inr": 1358648.68,
+        "mean_amount_inr": 12130.79,
+        "median_amount_inr": 3981.54
+      },
+      "Bill Payment": {
+        "transaction_count": 40,
+        "total_amount_inr": 281786.18,
+        "mean_amount_inr": 7044.65,
+        "median_amount_inr": 6616.51
+      },
+      "Cash Withdrawal": {
+        "transaction_count": 24,
+        "total_amount_inr": 250384.93,
+        "mean_amount_inr": 10432.71,
+        "median_amount_inr": 10124.42
+      },
+      "Missing": {
+        "transaction_count": 5,
+        "total_amount_inr": 58361.71,
+        "mean_amount_inr": 11672.34,
+        "median_amount_inr": 2440.3
+      },
+      "Refund": {
+        "transaction_count": 18,
+        "total_amount_inr": 49210.07,
+        "mean_amount_inr": 2733.89,
+        "median_amount_inr": 2404.34
+      },
+      "Subscription": {
+        "transaction_count": 38,
+        "total_amount_inr": 48940.56,
+        "mean_amount_inr": 1287.91,
+        "median_amount_inr": 1242.86
+      }
+    },
+    "by_status": {
+      "Completed": {
+        "transaction_count": 272,
+        "total_amount_inr": 3507454.13,
+        "mean_amount_inr": 12895.05,
+        "median_amount_inr": 4771.01
+      },
+      "Pending": {
+        "transaction_count": 17,
+        "total_amount_inr": 139764.04,
+        "mean_amount_inr": 8221.41,
+        "median_amount_inr": 5699.37
+      },
+      "Failed": {
+        "transaction_count": 13,
+        "total_amount_inr": 91267.32,
+        "mean_amount_inr": 7020.56,
+        "median_amount_inr": 6741.17
+      },
+      "Reversed": {
+        "transaction_count": 8,
+        "total_amount_inr": 75552.89,
+        "mean_amount_inr": 9444.11,
+        "median_amount_inr": 5127.93
+      },
+      "Missing": {
+        "transaction_count": 4,
+        "total_amount_inr": 12641.05,
+        "mean_amount_inr": 3160.26,
+        "median_amount_inr": 3126.18
+      }
+    },
+    "by_channel": {
+      "Mobile": {
+        "transaction_count": 107,
+        "total_amount_inr": 1665545.44,
+        "mean_amount_inr": 15565.85,
+        "median_amount_inr": 7517.5
+      },
+      "Web": {
+        "transaction_count": 81,
+        "total_amount_inr": 1383725.13,
+        "mean_amount_inr": 17083.03,
+        "median_amount_inr": 3982.39
+      },
+      "API": {
+        "transaction_count": 18,
+        "total_amount_inr": 253065.42,
+        "mean_amount_inr": 14059.19,
+        "median_amount_inr": 13233.56
+      },
+      "ATM": {
+        "transaction_count": 24,
+        "total_amount_inr": 250384.93,
+        "mean_amount_inr": 10432.71,
+        "median_amount_inr": 10124.42
+      },
+      "POS": {
+        "transaction_count": 56,
+        "total_amount_inr": 233468.79,
+        "mean_amount_inr": 4169.09,
+        "median_amount_inr": 3988.55
+      },
+      "Auto Debit": {
+        "transaction_count": 28,
+        "total_amount_inr": 40489.72,
+        "mean_amount_inr": 1446.06,
+        "median_amount_inr": 1464.86
+      }
+    },
+    "by_customer_region": {
+      "North": {
+        "transaction_count": 69,
+        "total_amount_inr": 1051393.18,
+        "mean_amount_inr": 15237.58,
+        "median_amount_inr": 4610.67
+      },
+      "Central": {
+        "transaction_count": 63,
+        "total_amount_inr": 831737.55,
+        "mean_amount_inr": 13202.18,
+        "median_amount_inr": 4791.94
+      },
+      "West": {
+        "transaction_count": 62,
+        "total_amount_inr": 699324.0,
+        "mean_amount_inr": 11279.42,
+        "median_amount_inr": 5143.18
+      },
+      "East": {
+        "transaction_count": 62,
+        "total_amount_inr": 653342.44,
+        "mean_amount_inr": 10537.78,
+        "median_amount_inr": 4878.12
+      },
+      "South": {
+        "transaction_count": 58,
+        "total_amount_inr": 590882.26,
+        "mean_amount_inr": 10187.63,
+        "median_amount_inr": 4635.21
+      }
+    }
+  },
+  "chart_artifacts": {
+    "amount_distribution": "outputs/test_run/run_2026-11-04_18-55-21/amount_distribution.png",
+    "volume_over_time": "outputs/test_run/run_2026-11-04_18-55-21/volume_over_time.png",
+    "missing_values": "outputs/test_run/run_2026-11-04_18-55-21/missing_values.png",
+    "category_channel_breakdown": "outputs/test_run/run_2026-11-04_18-55-21/category_channel_breakdown.png"
+  }
+}
